@@ -29,11 +29,10 @@ def playandremove(temp):
     os.remove('temp.mp3')
     print(audio_file)
 
-
 print("Running...")
 Tusher = input("Hey! What do you want me to call you?\n= ")
 print("Setting Environment.. This may take some time!\n")
-API_key = 'WQjKpCTP_jO7t417TQ7VfOWCuhopvEWXDoMQE0Acipw_8kA5g-cAkOFP--Zn6SFD_Udssw.'
+API_key = os.environ.get("API_KEY")
 ai = Bard(token=API_key)
 test = ai.get_answer("My name is "+Tusher+" remember that! And I will call you Friday from now! I expect you to answer me as Friday.")
 while True:
