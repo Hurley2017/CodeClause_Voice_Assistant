@@ -42,7 +42,7 @@ Tusher = input("Hey! What do you want me to call you?\n= ")
 print("Setting Environment.. This may take some time!\n")
 API_key = os.environ.get("API_KEY")
 ai = Bard(token=API_key)
-test = ai.get_answer(replacements["name"]+Tusher+replacements["friday"])
+test = ai.get_answer(replacements["name"]+Tusher+replacements["friday"] + replacements["limit"])
 while True:
     Query = invokeaudiototext()
     if(Query == 'exit'):
@@ -50,4 +50,4 @@ while True:
     received = ai.get_answer(Query)
     parse = received['content']
     print(parse)
-    ttsReverb(parse)
+    ttsReverb(parse) 
